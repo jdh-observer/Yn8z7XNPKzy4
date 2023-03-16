@@ -1,0 +1,13 @@
+notebook_path: article.ipynb
+CHECK RESSOURCES
+ file script/hello.py is not called
+ file media/roberto.png is not called
+CHECK URL
+URL: https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-1405-7062 is valid: True
+URL: https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-7190-9946 is valid: True
+URL: https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/ is valid: False
+URL: https://creativecommons.org/licenses/by/4.0/ is valid: True
+URL: https://visionscarto.net/maps/super-vision/, is valid: False
+URL: https://observablehq.com/@fil/epfl-super-vision. is valid: False
+URL: https://observablehq.com/embed/@fil/epfl-super-vision?cells=chart%2Ccss%2CshowWords%2Cstyle%2Cratio%2Cpolygon%2CyearShift%2ChtmlNode%2Cupdate_hover%2CN%2CmapSize%2Cx%2Cy%2CinitializeNodes%2Cbuffers%2Cstate%2C_worker%2CcreateWorkerFrom%2Cviewof+sensitivity%2CdefaultWheelDelta%2CdrawNodes%2Ccolors%2Cradius%2Cfont%2CH%2Cenclose%2CdrawUrquhart%2CdateReader%2CYEAR%2CbyYear%2Cres%2Chover%2CcircularTimeline%2CyearCount%2Cangle%2Cmodes%2CdrawModes%2Crawtheses%2Curl_umap_embedding%2Cumap_embed%2Calltheses%2Ctheses%2Cdata%2Cangle_a%2Cres_baked%2CapproximateCount%2CapproximateCountDerivative%2CintervalTheses%2Cd3%2Ctau%2CformatRow%2Cwidth%2Cheight%2Csin%2Ccos', is valid: True
+CHECK HTML
