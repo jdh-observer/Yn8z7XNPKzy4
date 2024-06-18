@@ -17,12 +17,12 @@ jupyter:
 <!-- #endregion -->
 
 <!-- #region tags=["contributor"] -->
-### Dario Rodighiero [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-1405-7062) 
+### Dario Rodighiero [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-1405-7062)
 University of Groningen
 <!-- #endregion -->
 
 <!-- #region tags=["contributor"] -->
-### Sarah Kenderdine [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-7190-9946) 
+### Sarah Kenderdine [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-7190-9946)
 École polytechnique fédérale de Lausanne
 <!-- #endregion -->
 
@@ -32,7 +32,7 @@ Visionscarto
 <!-- #endregion -->
 
 <!-- #region tags=["copyright"] -->
-[![cc-by](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/) 
+[![cc-by](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
 © Dario Rodighiero - Sarah Kenderdine - Philippe Rivière. Published by De Gruyter in cooperation with the University of Luxembourg Centre for Contemporary and Digital History. This is an Open Access article distributed under the terms of the [Creative Commons Attribution License CC-BY](https://creativecommons.org/licenses/by/4.0/)
 
 <!-- #endregion -->
@@ -44,7 +44,7 @@ dimensionality reduction, information design, knowledge design, network visualiz
 <!-- #region tags=["abstract"] -->
 The fiftieth anniversary of EPFL (*École Polytechnique Fédérale de Lausanne*) offered the opportunity to retrace its history through the digital archives housed by the institute itself. Part of the exhibition Infinity Room 2, the Super-Vision project investigates the practice of academic advising by visualizing 8,000 doctoral theses in a work at the intersection of art, science, and technology.
 
-Inaugurated in September 2019 at EPFL Pavilions, Super-Vision presents a diachronic mapping that uses artificial intelligence to shed light on an institutional dataset that would be unobservable otherwise. To achieve such a goal, 8,000 doctoral theses are analyzed with natural language processing and mapped with techniques of dimensionality reduction, combining language and time within in an interactive visualization accessible to the public.
+Inaugurated in September 2019 at EPFL Pavilions, Super-Vision presents a diachronic mapping that uses artificial intelligence to shed light on an institutional dataset that would be unobservable otherwise. To achieve such a goal, 8,000 doctoral theses are analysed with natural language processing and mapped with techniques of dimensionality reduction, combining language and time within in an interactive visualization accessible to the public.
 
 The project title has a twofold meaning: on the one hand, it refers to the educational practice that connects doctoral students to supervisors; on the other hand, it employs information design like a macroscope to grasp complex phenomena from a distant standpoint. The result offers EPFL employees and museum visitors an original perspective to look at the institute with different eyes.
 <!-- #endregion -->
@@ -64,7 +64,7 @@ This article investigates the art of storytelling for academic digital archives.
 
 
 ```python tags=["figure-exhibition-*"]
-from IPython.display import Image 
+from IPython.display import Image
 metadata={
     "jdh": {
         "module": "object",
@@ -101,7 +101,7 @@ Simultaneously, as mentioned in the book Museum Object Lessons for the Digital A
 
 
 ```python tags=["figure-zkm-*"]
-from IPython.display import Image 
+from IPython.display import Image
 metadata={
     "jdh": {
         "module": "object",
@@ -124,7 +124,7 @@ The initial idea was to design a visualization capable of representing the EPFL 
 
 
 
-The investigation started with Infoscience, the repository of EPFL research based on CERN’s open-source software Invenio (<cite data-cite="1465847/4DJLKULF"></cite>). Maintained by the library, the Infoscience repository collects, stores, and shares institutional scientific and gray literature, including around 8,000 doctoral theses. Whereas the Affinity Map project was exclusively relying on the analysis of article abstracts, the idea with Super-Vision was to advance the methodology by applying text analysis to full texts. However, to experiment this, was necessary a homogeneous corpus of scientific literature that was identified into the doctoral theses. Unlike journal articles often affected by copyright restrictions (<cite data-cite="1465847/Q4H89YI6"></cite>), doctoral theses feature the rare qualities of being publicly available and having consistency over time. The accessibility of both metadata and full texts in PDF format makes the corpus of doctoral theses an ideal solution for visualization. In addition, the opportunity to look at a scientific organization from an original dataset, situated between academic education and research career, represents a barely explored area of mapping that diverges from the current institutional perception.
+The investigation started with Infoscience, the repository of EPFL research based on CERN’s open-source software Invenio (<cite data-cite="1465847/4DJLKULF"></cite>). Maintained by the library, the Infoscience repository collects, stores, and shares institutional scientific and gray literature, including around 8,000 doctoral theses. Whereas the Affinity Map project was exclusively relying on the analysis of article abstracts, the idea with Super-Vision was to advance the methodology by applying text analysis to full texts. However, to experiment this, it was necessary to use a homogeneous corpus of scientific literature that was identified into the doctoral theses. Unlike journal articles often affected by copyright restrictions (<cite data-cite="1465847/Q4H89YI6"></cite>), doctoral theses feature the rare qualities of being publicly available and having consistency over time. The accessibility of both metadata and full texts in PDF format makes the corpus of doctoral theses an ideal solution for visualization. In addition, the opportunity to look at a scientific organization from an original dataset, situated between academic education and research career, represents a barely explored area of mapping that diverges from the current institutional perception.
 
 
 
@@ -135,17 +135,17 @@ Technically speaking, the collection of doctoral theses enables a twofold naviga
 The entire data analysis and development was facilitated by Observable (<cite data-cite="1465847/SDVTBDDI"></cite>), a digital platform to treat and plot data by making use of real-time programming through an interface that recalls Jupyter Notebooks. Founded by Mike Bostock, who earned its reputation by working at the New York Times, such a platform makes advanced data visualization techniques accessible to a broad audience by using the d3.js library (<cite data-cite="1465847/D4SJ8DFK"></cite>).
 
 
-The first attempt at exploring the dataset is represented by the scatter plot below, which organizes doctoral theses in a timeline. Despite its simplicity, this visual tells much information about the collection. At first glance, the horizontal axis organizes the publication by year, which increases as the time goes by: the more space between ticks, the higher the number of doctoral theses in the specific time window. On the vertical dimension, distribution is aleatory but necessary to untangle the dot overlapping. In terms of precision, it is interesting to observe the temporal classification: the full date is part of the metadata except for the dissertation defended before 1999, and for unclear reasons, a time window between 2008 and 2012. Diversely, colors reveal some characteristics to consider carefully: in gray are doctoral theses that are not associated with any faculty, probably because of the institute’s reorganization; in orange and gray are those doctoral theses without abstract, whose absence affects in part the text analysis; in green are doctoral theses with a complete metadata set.
+The first attempt at exploring the dataset is represented by the scatter plot below, which organizes doctoral theses in a timeline. Despite its simplicity, this visual tells us much information about the collection. At first glance, the horizontal axis organizes the publication by year, which increases as the time goes by: the more space between ticks, the higher the number of doctoral theses in the specific time window. On the vertical dimension, distribution is aleatory but necessary to untangle the dot overlapping. In terms of precision, it is interesting to observe the temporal classification: the full date is part of the metadata except for the dissertation defended before 1999, and for unclear reasons, a time window between 2008 and 2012. Diversely, colours reveal some characteristics to consider carefully: in grey are doctoral theses that are not associated with any faculty, probably because of the institute’s reorganization; in orange and grey are those doctoral theses without abstract, whose absence affects in part the text analysis; in green are doctoral theses with a complete metadata set.
 
 ```python tags=["figure-wrangling-*"]
-from IPython.display import Image 
+from IPython.display import Image
 metadata={
     "jdh": {
         "module": "object",
         "object": {
             "type":"image",
             "source": [
-                "The first attempt at exploring the dataset is represented by the scatter plot below, which organizes doctoral theses in a timeline. Despite its simplicity, this visual tells much information about the collection. At first glance, the horizontal axis organizes the publication by year, which increases as the time goes by: the more space between ticks, the higher the number of doctoral theses in the specific time window. On the vertical dimension, distribution is aleatory but necessary to untangle the dot overlapping. In terms of precision, it is interesting to observe the temporal classification: the full date is part of the metadata except for the dissertation defended before 1999, and for unclear reasons, a time window between 2008 and 2012. Diversely, colors reveal some characteristics to consider carefully: in gray are doctoral theses that are not associated with any faculty, probably because of the institute’s reorganization; in orange and gray are those doctoral theses without abstract, whose absence affects in part the text analysis; in green are doctoral theses with a complete metadata set."
+                "The first attempt at exploring the dataset is represented by the scatter plot below, which organizes doctoral theses in a timeline. Despite its simplicity, this visual tells much information about the collection. At first glance, the horizontal axis organizes the publication by year, which increases as the time goes by: the more space between ticks, the higher the number of doctoral theses in the specific time window. On the vertical dimension, distribution is aleatory but necessary to untangle the dot overlapping. In terms of precision, it is interesting to observe the temporal classification: the full date is part of the metadata except for the dissertation defended before 1999, and for unclear reasons, a time window between 2008 and 2012. Diversely, colours reveal some characteristics to consider carefully: in grey are doctoral theses that are not associated with any faculty, probably because of the institute’s reorganization; in orange and grey are those doctoral theses without abstract, whose absence affects in part the text analysis; in green are doctoral theses with a complete metadata set."
             ]
         }
     }
@@ -153,22 +153,22 @@ metadata={
 display(Image("media/wrangling.png"), metadata=metadata)
 ```
 
-This initial overview proves the steady growth of doctoral theses but also reveals something unexpected: considering that EPFL was celebrating its fifth anniversary, how was it possible that a consistent number of publications could date back to the beginning of the twentieth century? After a brief investigation, we realized that EPFL was previously integrated into the University of Lausanne and only in 1969 was transformed into an independent institute, bringing with it a selection of doctoral theses. The detachment was due to a political choice to balance the linguistic predominance of ETH Zürich in favor of the French-speaking part of Switzerland (<cite data-cite="1465847/9H3MJEZ9"></cite>).
+This initial overview proves the steady growth of doctoral theses but also reveals something unexpected: considering that EPFL was celebrating its fifth anniversary, how was it possible that a consistent number of publications could date back to the beginning of the twentieth century? After a brief investigation, we realized that EPFL was previously integrated into the University of Lausanne and only in 1969 was transformed into an independent institute, bringing with it a selection of doctoral theses. The detachment was due to a political choice to balance the linguistic predominance of ETH Zürich in favour of the French-speaking part of Switzerland (<cite data-cite="1465847/9H3MJEZ9"></cite>).
 
 
 Although doctoral theses’ increasing frequency represented a valuable insight for museum visitors, there was a more complex research question to address in the project: what kind of organizational structure could be extracted from doctoral supervision? Embracing the idea that scientific communities should be represented by all individual members (<cite data-cite="1465847/EF2A2SQ3"></cite>), it was decided to avoid any kind of quantitative analysis by focusing on doctoral students instead of their advisors. Representing a social network of both would have led the readers to identify the most central individuals, overshadowing everyone else. With the Super-Vision project, there was a general intention to give prominence to the individuality of the whole organization to present EPFL not as a hierarchical institute but as an extensive network of international scholars.
 
 
-The basic idea was revealing EPFL’s structure through a network of doctoral students arranged according to a metric of textual similarity. Titles, abstracts, and the first ten pages of 8,000 doctoral theses were analyzed to extract the most used terms for each publication, using the spaCy library for Python (<cite data-cite="1465847/2LBUXWW5"></cite>). The number of pages was limited due to the computational load of machines at disposal. Successively, the algorithm TF-IDF — which stands for *term frequency-inverse document frequency* — identified the most relevant words for each doctoral thesis with respect to the entire corpus (Salton et al., 1975). Such a step is helpful to get rid of the most common terms of the corpus, which are not relevant to developing a metric of similarity. The resulting dataset was then processed through an algorithm of *dimensionality reduction* to create the mapping. The UMAP algorithm (<cite data-cite="1465847/XK5BRHQB"></cite>) can be indeed used to reduce the highly complex lexical dimensionality into two dimensions, enabling the mapping on the Cartesian plane in what is commonly known as word embedding (<cite data-cite="1465847/53E86Z6N"></cite>).
+The basic idea was revealing EPFL’s structure through a network of doctoral students arranged according to a metric of textual similarity. Titles, abstracts, and the first ten pages of 8,000 doctoral theses were analysed to extract the most used terms for each publication, using the spaCy library for Python (<cite data-cite="1465847/2LBUXWW5"></cite>). The number of pages was limited due to the computational load of machines at our disposal. Successively, the algorithm TF-IDF — which stands for *term frequency-inverse document frequency* — identified the most relevant words for each doctoral thesis with respect to the entire corpus (Salton et al., 1975). Such a step is helpful to get rid of the most common terms of the corpus, which are not relevant to developing a metric of similarity. The resulting dataset was then processed through an algorithm of *dimensionality reduction* to create the mapping. The UMAP algorithm (<cite data-cite="1465847/XK5BRHQB"></cite>) can be indeed used to reduce the highly complex lexical dimensionality into two dimensions, enabling the mapping on the Cartesian plane in what is commonly known as word embedding (<cite data-cite="1465847/53E86Z6N"></cite>).
 
 
 The result of this process is visible in the figure below where the network structure is created by using Urquhart, an algorithm that draws connectivity between near nodes to avoid line overlapping (<cite data-cite="1465847/HGDVFNHE"></cite>). The figure shows how doctoral theses/students are clearly grouped in specific areas, confirming the initial hypothesis that lexical information can reveal the overall organizational structure of the EPFL. A scattered structure, on the contrary, would have proved the presence of a non-uniform linguistic corpus, indicating a potential risk of inconsistency in data or methodology.
 
 
-Looking at the figure below, we can easily see where the faculties are positioned. Assuming a faculty numbering on two lines, respectively A, B, C, and C, D, E, we can infer some information about the general interdisciplinary structure by looking at this small multiple. The School of Architecture, Civil and Environmental Engineering (A) and the School of Computer and Communication Sciences (B) are characterized by a well-defined lexical structure, which confines them to specific regions of the map. The School of Basic Sciences (C) and the School of Engineering (D) spread horizontally, suggesting the use of a lexicon that overlaps other disciplines. The School of Life Sciences (E) proves to have a strong identity despite its young age, and the College of Management of Technology has not enough doctoral students to delineate a clear border.
+Looking at the figure below, we can easily see where the faculties are positioned. Assuming a faculty numbering on two lines, respectively A, B, C, and C, D, E, we can infer some information about the general interdisciplinary structure by looking at this small multiple. The School of Architecture, Civil and Environmental Engineering (A) and the School of Computer and Communication Sciences (B) are characterized by a well-defined lexical structure, which confines them to specific regions of the map. The School of Basic Sciences (C) and the School of Engineering (D) spread horizontally, suggesting the use of a lexicon that overlaps other disciplines. The School of Life Sciences (€) proves to have a strong identity despite its young age, and the College of Management of Technology has not enough doctoral students to delineate a clear border.
 
 ```python tags=["figure-faculties-*"]
-from IPython.display import Image 
+from IPython.display import Image
 metadata={
     "jdh": {
         "module": "object",
@@ -190,20 +190,20 @@ While the data investigation was active, provisional results underwent a design 
 
 
 
-The Super-Vision project resulted from a participatory design (<cite data-cite="1465847/WZH4CHET"></cite>) that involved expertise from data science, information design, experimental museology, and academic research. Dario Rodighiero (MIT) oversaw the general concept and the data collection, Philippe Rivière (Visionscarto) the data analysis and visualization, Patrick Donaldson (EM+) the graphic design, and Sarah Kenderdine (EM+) the museum installation. It is worth noting that most of the development was carried out with collaborators from Switzerland, France, and the United States who could collaborate through Slack, Observable, and Dropbox. However, it is important to stress that a consistent part of the project budget was used to meet in person two months before the exhibition to take a look at the gallery space and adjust the graphic layout. Indeed, the calibration of colors, fonts, and shapes, and the testing of technical devices are operations that have to be  scrutinized by everyone in the exhibition location. Although the design process moved online smoothly, the opportunity to meet in person accelerated the finalization of the project.
+The Super-Vision project resulted from a participatory design (<cite data-cite="1465847/WZH4CHET"></cite>) that involved expertise from data science, information design, experimental museology, and academic research. Dario Rodighiero (MIT) oversaw the general concept and the data collection, Philippe Rivière (Visionscarto) the data analysis and visualization, Patrick Donaldson (EM+) the graphic design, and Sarah Kenderdine (EM+) the museum installation. It is worth noting that most of the development was carried out with collaborators from Switzerland, France, and the United States who could collaborate through Slack, Observable, and Dropbox. However, it is important to stress that a consistent part of the project budget was used to meet in person two months before the exhibition to take a look at the gallery space and adjust the graphic layout. Indeed, the calibration of colours, fonts, and shapes, and the testing of technical devices are operations that have to be  scrutinized by everyone in the exhibition location. Although the design process moved online smoothly, the opportunity to meet in person accelerated the finalization of the project.
 
 
-The idea of a timespan- and structure-based data visualization representing EPFL evolution inspired the general concept of the digital installation. As a result, the Super-Vision project was created as a compound of two distinct but complementary visualizations representing time and space respectively. As visible in the figure below, the screenshot shows how the center of this compound visualization hosts a network visualization arranging doctoral theses according to their lexical similarity: the more two theses are nearby in the Cartesian plane, the greater their similarity ((<cite data-cite="1465847/UXAJSQYI"></cite><cite data-cite="1465847/SCADPH2G"></cite><cite data-cite="1465847/EF2A2SQ3"></cite><cite data-cite="1465847/2IY3BJAW"></cite>)). The network visualization draws an image of 8,000 doctoral theses, which allows the viewer to observe a visual classification by faculty of the entire corpus of doctoral theses, enabling spatial exploration. Around this network, a line chart marks an outer circle that works as an enclosing frame, showing the increasing frequency of doctoral defenses. The network visualization and the line chart offer two complementary perspectives of the same dataset, creating a novel compound that can be described as an intermediary object between a dashboard and a basic visualization. In the tentative to imitate the incomparable Charles Joseph Minard’s infographic presenting Napoleon’s defeat (<cite data-cite="1465847/CVFJ63WL"></cite>), Super-Vision’s visualization guides the viewer through historical data through a multidimensional instrument to look into the institutional dimensionality of doctoral advising.
+The idea of a timespan- and structure-based data visualization representing EPFL evolution inspired the general concept of the digital installation. As a result, the Super-Vision project was created as a compound of two distinct but complementary visualizations representing time and space respectively. As visible in the figure below, the screenshot shows how the centre of this compound visualization hosts a network visualization arranging doctoral theses according to their lexical similarity: the more two of theses are nearby in the Cartesian plane, the greater their similarity ((<cite data-cite="1465847/UXAJSQYI"></cite><cite data-cite="1465847/SCADPH2G"></cite><cite data-cite="1465847/EF2A2SQ3"></cite><cite data-cite="1465847/2IY3BJAW"></cite>)). The network visualization draws an image of 8,000 doctoral theses, which allows the viewer to observe a visual classification by faculty of the entire corpus of doctoral theses, enabling spatial exploration. Around this network, a line chart marks an outer circle that works as an enclosing frame, showing the increasing frequency of doctoral defences. The network visualization and the line chart offer two complementary perspectives of the same dataset, creating a novel compound that can be described as an intermediary object between a dashboard and a basic visualization. In the case to imitate the incomparable Charles Joseph Minard’s infographic presenting Napoleon’s defeat (<cite data-cite="1465847/CVFJ63WL"></cite>), Super-Vision’s visualization guides the viewer through historical data through a multidimensional instrument to look into the institutional dimensionality of doctoral advising.
 
 ```python tags=["figure-design-*"]
-from IPython.display import Image 
+from IPython.display import Image
 metadata={
     "jdh": {
         "module": "object",
         "object": {
             "type":"image",
             "source": [
-                "This screenshot shows an intermediate version of Super-Vision, created during design developments. The circular timeline embraces the institutional structure, offering two different points of view of the same dataset. This compound visual allows exploring 8,000 doctoral theses interacting simultaneously with the two data visualizations. The cyan color indicates selections: the highlighted dots indicate those doctoral theses defended in the period highlighted by the timeline. The most visible selection allows the user to get information about a specific thesis, highlighting the faculty structure in the background network. "
+                "This screenshot shows an intermediate version of Super-Vision, created during design developments. The circular timeline embraces the institutional structure, offering two different points of view of the same dataset. This compound visual allows exploring 8,000 doctoral theses interacting simultaneously with the two data visualizations. The cyan colour indicates selections: the highlighted dots indicate those doctoral theses defended in the period highlighted by the timeline. The most visible selection allows the user to get information about a specific thesis, highlighting the faculty structure in the background network. "
             ]
         }
     }
@@ -211,7 +211,7 @@ metadata={
 display(Image("media/design.png"), metadata=metadata)
 ```
 
-An additional level of information is given by interactivity, which allows users to explore the dataset in detail. The figure above shows how the compound visualization is characterized by cyan graphic elements indicating selections. One user can navigate through time on a laptop by scrolling the trackpad, which moves the selection bar.  In response to this input, some graphic elements start bumping to bring out from the intertwined tissue of the doctoral theses defended in the selected period. From this central space, the user is invited to select one bouncing dot to get further information: on click, the interactive interface will show the title, candidate, directors, and faculty of the selected doctoral thesis, accompanied by a background effect showing the relative faculty’s extension. Only at this point the user is offered to explore the neighborhood by navigating transversally similar works. This combination shows us how information and interaction design are intimately connected by their shared goal of understanding data, as recently discussed by Manuel Lima in a recent interview (<cite data-cite="1465847/FLKAEEBR"></cite>).
+An additional level of information is given by interactivity, which allows users to explore the dataset in detail. The figure above shows how the compound visualization is characterized by cyan graphic elements indicating selections. One user can navigate through time on a laptop by scrolling the trackpad, which moves the selection bar.  In response to this input, some graphic elements start bumping to bring out from the intertwined tissue of the doctoral theses defended in the selected period. From this central space, the user is invited to select one bouncing dot to get further information: on click, the interactive interface will show the title, candidate, directors, and faculty of the selected doctoral thesis, accompanied by a background effect showing the relative faculty’s extension. Only at this point the user is offered to explore the neighbourhood by navigating transversally similar works. This combination shows us how information and interaction design are intimately connected by their shared goal of understanding data, as recently discussed by Manuel Lima in a recent interview (<cite data-cite="1465847/FLKAEEBR"></cite>).
 
 
 
@@ -228,10 +228,10 @@ IFrame('https://observablehq.com/embed/@fil/epfl-super-vision?cells=chart%2Ccss%
 ## Physical Installation
 
 
-Super-Vision was explicitly designed for Infinity Room 2, and some adopted solutions were offered by the exhibition space and the technical material at disposal. For example, the choice of a circular projection was not only suggested by the form of the UMAP algorithm but also because of the availability of a round-shaped projection surface already employed in another exhibition. The surface measuring one meter and a half, previously used on the floor, this time was hung on the gallery’s wall to maintain the verticality of the textual information (see figure below).
+Super-Vision was explicitly designed for Infinity Room 2, and some adopted solutions were offered by the exhibition space and the technical material at our disposal. For example, the choice of a circular projection was not only suggested by the form of the UMAP algorithm but also because of the availability of a round-shaped projection surface already employed in another exhibition. The surface measuring one meter and a half, previously used on the floor, this time was hung on the gallery’s wall to maintain the verticality of the textual information (see figure below).
 
 
-The projection surface also represented a constraint to space out the projector. The two-meter distance from the wall balances the spectator’s view, the projector’s resolution, and the luminosity contrast between the projection screen and gallery illumination. The installation was thus completed with a one-meter column capable of hosting the projector and a device to interact with the data visualization. The chosen device was a three-dimensional mouse that allowed the visitor to browse the doctoral theses on the Cartesian plane and move throughout the timeline by rotating the wheel in clockwise or counterclockwise directions. The rotation characteristic was particularly relevant for the final choice because it recalls the visualization’s rounded shape, creating a cognitive correspondence between shape and functionality.
+The projection surface also represented a constraint to space out the projector. The two-meter distance from the wall balances the spectator’s view, the projector’s resolution, and the luminosity contrast between the projection screen and gallery illumination. The installation was thus completed with a one-meter column capable of hosting the projector and a device to interact with the data visualization. The chosen device was a three-dimensional mouse that allowed the visitor to browse the doctoral theses on the Cartesian plane and move throughout the timeline by rotating the wheel in clockwise or counter-clockwise directions. The rotation characteristic was particularly relevant for the final choice because it recalls the visualization’s rounded shape, creating a cognitive correspondence between shape and functionality.
 
 
 
@@ -239,7 +239,7 @@ The Super-Vision digital installation was positioned in a niche of the long hall
 
 
 ```python tags=["figure-installation-*"]
-from IPython.display import Image 
+from IPython.display import Image
 metadata={
     "jdh": {
         "module": "object",
@@ -268,7 +268,7 @@ Observing how data visualization runs across disciplines and professionals is en
 
 
 
-In particular, the most critical thought in the Super-Vision project raises concerns about the university’s fast-growing model. The data visualization clearly shows how there was roughly one doctoral defense per month during the 1960s, while EPFL today exceeds one thesis per day. To a keen eye, this stunning insight not only represents a statistical increase but also reveals more-hidden institutional regulations. Indeed, this university model prefers to invest money in doctoral students rather than intermediary research positions like researchers and senior researchers, which are disappearing from the organizational chart, obliging many scholars to move out of the institute or accept administrative employment. On the one hand, the increase in doctoral students represents a more significant opportunity to pursue doctoral studies, but on the other hand, it makes the academic career more difficult than before because of the higher number of potential candidates for professorships.
+In particular, the most critical thought in the Super-Vision project raises concerns about the university’s fast-growing model. The data visualization clearly shows how there was roughly one doctoral defence per month during the 1960s, while EPFL today exceeds one thesis per day. To a keen eye, this stunning insight not only represents a statistical increase but also reveals more-hidden institutional regulations. Indeed, this university model prefers to invest money in doctoral students rather than intermediary research positions like researchers and senior researchers, which are disappearing from the organizational chart, obliging many scholars to move out of the institute or accept administrative employment. On the one hand, the increase in doctoral students represents a more significant opportunity to pursue doctoral studies, but on the other hand, it makes the academic career more difficult than before because of the higher number of potential candidates for professorships.
 
 
 
