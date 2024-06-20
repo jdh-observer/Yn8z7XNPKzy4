@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    formats: ipynb,md
     text_representation:
       extension: .md
       format_name: markdown
@@ -165,7 +166,7 @@ The basic idea was revealing EPFL’s structure through a network of doctoral st
 The result of this process is visible in the figure below where the network structure is created by using Urquhart, an algorithm that draws connectivity between near nodes to avoid line overlapping (<cite data-cite="1465847/HGDVFNHE"></cite>). The figure shows how doctoral theses/students are clearly grouped in specific areas, confirming the initial hypothesis that lexical information can reveal the overall organizational structure of the EPFL. A scattered structure, on the contrary, would have proved the presence of a non-uniform linguistic corpus, indicating a potential risk of inconsistency in data or methodology.
 
 
-Looking at the figure below, we can easily see where the faculties are positioned. Assuming a faculty numbering on two lines, respectively A, B, C, and C, D, E, we can infer some information about the general interdisciplinary structure by looking at this small multiple. The School of Architecture, Civil and Environmental Engineering (A) and the School of Computer and Communication Sciences (B) are characterized by a well-defined lexical structure, which confines them to specific regions of the map. The School of Basic Sciences (C) and the School of Engineering (D) spread horizontally, suggesting the use of a lexicon that overlaps other disciplines. The School of Life Sciences (€) proves to have a strong identity despite its young age, and the College of Management of Technology has not enough doctoral students to delineate a clear border.
+Looking at the figure below, we can easily see where the faculties are positioned. Assuming a faculty numbering on two lines, respectively (A), (B), (C), (C), (D), (E), we can infer some information about the general interdisciplinary structure by looking at this small multiple. The School of Architecture, Civil and Environmental Engineering (A) and the School of Computer and Communication Sciences (B) are characterized by a well-defined lexical structure, which confines them to specific regions of the map. The School of Basic Sciences (C) and the School of Engineering (D) spread horizontally, suggesting the use of a lexicon that overlaps other disciplines. The School of Life Sciences (E) proves to have a strong identity despite its young age, and the College of Management of Technology has not enough doctoral students to delineate a clear border.
 
 ```python tags=["figure-faculties-*"]
 from IPython.display import Image
