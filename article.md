@@ -117,28 +117,35 @@ metadata={
 display(Image("media/zkm.jpg"), metadata=metadata)
 ```
 
+<!-- #region tags=["hermeneutics"] -->
 ## Data Investigation and Analysis
 
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The initial idea was to design a visualization capable of representing the EPFL community through scientific literature, drawing on the experience of the Affinity Map project (<cite data-cite="1465847/CXZ3G9EL"></cite>). One of the most interesting outcomes of this project was to represent the scientific community in a more democratic way, preferring a more-equitable metric of linguistic similarity to a quantitative analysis that foregrounds the most cited scholars (<cite data-cite="1465847/EF2A2SQ3"></cite>). This approach leads to network visualizations in which all individuals occupy the same space, aiming at a more balanced representation and a more proper image of the entire organization.
 
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The investigation started with Infoscience, the repository of EPFL research based on CERN’s open-source software Invenio (<cite data-cite="1465847/4DJLKULF"></cite>). Maintained by the library, the Infoscience repository collects, stores, and shares institutional scientific and gray literature, including around 8,000 doctoral theses. Whereas the Affinity Map project was exclusively relying on the analysis of article abstracts, the idea with Super-Vision was to advance the methodology by applying text analysis to full texts. However, to experiment this, it was necessary to use a homogeneous corpus of scientific literature that was identified into the doctoral theses. Unlike journal articles often affected by copyright restrictions (<cite data-cite="1465847/Q4H89YI6"></cite>), doctoral theses feature the rare qualities of being publicly available and having consistency over time. The accessibility of both metadata and full texts in PDF format makes the corpus of doctoral theses an ideal solution for visualization. In addition, the opportunity to look at a scientific organization from an original dataset, situated between academic education and research career, represents a barely explored area of mapping that diverges from the current institutional perception.
 
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 Technically speaking, the collection of doctoral theses enables a twofold navigation relating to textual information (<cite data-cite="1465847/H6CIZNSG"></cite>) and temporal dimension (<cite data-cite="1465847/WBB27VD2"></cite>). On the one hand, body texts offer the opportunity to explore techniques of natural language processing (<cite data-cite="1465847/PHTPQ458"></cite>) and dimensionality reduction (<cite data-cite="1465847/TZI9V4GP"></cite><cite data-cite="1465847/EGN3IT95"></cite>). On the other hand, metadata enables the temporal analysis of publications through techniques of data visualization (<cite data-cite="1465847/43C84E9N"></cite>). Both data dimensions can provide interesting insights on institutional evolution by visually reproducing the EPFL trajectory.
 
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The entire data analysis and development was facilitated by Observable (<cite data-cite="1465847/SDVTBDDI"></cite>), a digital platform to treat and plot data by making use of real-time programming through an interface that recalls Jupyter Notebooks. Founded by Mike Bostock, who earned its reputation by working at the New York Times, such a platform makes advanced data visualization techniques accessible to a broad audience by using the d3.js library (<cite data-cite="1465847/D4SJ8DFK"></cite>).
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The first attempt at exploring the dataset is represented by the scatter plot below, which organizes doctoral theses in a timeline. Despite its simplicity, this visual tells us much information about the collection. At first glance, the horizontal axis organizes the publication by year, which increases as the time goes by: the more space between ticks, the higher the number of doctoral theses in the specific time window. On the vertical dimension, distribution is aleatory but necessary to untangle the dot overlapping. In terms of precision, it is interesting to observe the temporal classification: the full date is part of the metadata except for the dissertation defended before 1999, and for unclear reasons, a time window between 2008 and 2012. Diversely, colours reveal some characteristics to consider carefully: in grey are doctoral theses that are not associated with any faculty, probably because of the institute’s reorganization; in orange and grey are those doctoral theses without abstract, whose absence affects in part the text analysis; in green are doctoral theses with a complete metadata set.
+<!-- #endregion -->
 
-```python tags=["figure-wrangling-*"]
+```python tags=["figure-wrangling-*", "hermeneutics"]
 from IPython.display import Image
 metadata={
     "jdh": {
@@ -154,21 +161,27 @@ metadata={
 display(Image("media/wrangling.png"), metadata=metadata)
 ```
 
+<!-- #region tags=["hermeneutics"] -->
 This initial overview proves the steady growth of doctoral theses but also reveals something unexpected: considering that EPFL was celebrating its fifth anniversary, how was it possible that a consistent number of publications could date back to the beginning of the twentieth century? After a brief investigation, we realized that EPFL was previously integrated into the University of Lausanne and only in 1969 was transformed into an independent institute, bringing with it a selection of doctoral theses. The detachment was due to a political choice to balance the linguistic predominance of ETH Zürich in favour of the French-speaking part of Switzerland (<cite data-cite="1465847/9H3MJEZ9"></cite>).
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 Although doctoral theses’ increasing frequency represented a valuable insight for museum visitors, there was a more complex research question to address in the project: what kind of organizational structure could be extracted from doctoral supervision? Embracing the idea that scientific communities should be represented by all individual members (<cite data-cite="1465847/EF2A2SQ3"></cite>), it was decided to avoid any kind of quantitative analysis by focusing on doctoral students instead of their advisors. Representing a social network of both would have led the readers to identify the most central individuals, overshadowing everyone else. With the Super-Vision project, there was a general intention to give prominence to the individuality of the whole organization to present EPFL not as a hierarchical institute but as an extensive network of international scholars.
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The basic idea was revealing EPFL’s structure through a network of doctoral students arranged according to a metric of textual similarity. Titles, abstracts, and the first ten pages of 8,000 doctoral theses were analysed to extract the most used terms for each publication, using the spaCy library for Python (<cite data-cite="1465847/2LBUXWW5"></cite>). The number of pages was limited due to the computational load of machines at our disposal. Successively, the algorithm TF-IDF — which stands for *term frequency-inverse document frequency* — identified the most relevant words for each doctoral thesis with respect to the entire corpus (Salton et al., 1975). Such a step is helpful to get rid of the most common terms of the corpus, which are not relevant to developing a metric of similarity. The resulting dataset was then processed through an algorithm of *dimensionality reduction* to create the mapping. The UMAP algorithm (<cite data-cite="1465847/XK5BRHQB"></cite>) can be indeed used to reduce the highly complex lexical dimensionality into two dimensions, enabling the mapping on the Cartesian plane in what is commonly known as word embedding (<cite data-cite="1465847/53E86Z6N"></cite>).
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The result of this process is visible in the figure below where the network structure is created by using Urquhart, an algorithm that draws connectivity between near nodes to avoid line overlapping (<cite data-cite="1465847/HGDVFNHE"></cite>). The figure shows how doctoral theses/students are clearly grouped in specific areas, confirming the initial hypothesis that lexical information can reveal the overall organizational structure of the EPFL. A scattered structure, on the contrary, would have proved the presence of a non-uniform linguistic corpus, indicating a potential risk of inconsistency in data or methodology.
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 Looking at the figure below, we can easily see where the faculties are positioned. Assuming a faculty numbering on two lines, respectively (A), (B), \(C\), (D), (E), we can infer some information about the general interdisciplinary structure by looking at this small multiple. The School of Architecture, Civil and Environmental Engineering (A) and the School of Computer and Communication Sciences (B) are characterized by a well-defined lexical structure, which confines them to specific regions of the map. The School of Basic Sciences \(C\) and the School of Engineering (D) spread horizontally, suggesting the use of a lexicon that overlaps other disciplines. The School of Life Sciences (E) proves to have a strong identity despite its young age, and the College of Management of Technology has not enough doctoral students to delineate a clear border.
+<!-- #endregion -->
 
-```python tags=["figure-faculties-*"]
+```python tags=["figure-faculties-*", "hermeneutics"]
 from IPython.display import Image
 metadata={
     "jdh": {
@@ -184,19 +197,24 @@ metadata={
 display(Image("media/faculties.jpg"), metadata=metadata)
 ```
 
+<!-- #region tags=["hermeneutics"] -->
 ## Graphic and Interaction Design
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 While the data investigation was active, provisional results underwent a design process to give them a form to advance understanding through visual and interactive means (<cite data-cite="1465847/CA3XKSB3"></cite><cite data-cite="1465847/NMBTVCIJ"></cite><cite data-cite="1465847/KES9SJPC"></cite>).
 
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The Super-Vision project resulted from a participatory design (<cite data-cite="1465847/WZH4CHET"></cite>) that involved expertise from data science, information design, experimental museology, and academic research. Dario Rodighiero (MIT) oversaw the general concept and the data collection, Philippe Rivière (Visionscarto) the data analysis and visualization, Patrick Donaldson (EM+) the graphic design, and Sarah Kenderdine (EM+) the museum installation. It is worth noting that most of the development was carried out with collaborators from Switzerland, France, and the United States who could collaborate through Slack, Observable, and Dropbox. However, it is important to stress that a consistent part of the project budget was used to meet in person two months before the exhibition to take a look at the gallery space and adjust the graphic layout. Indeed, the calibration of colours, fonts, and shapes, and the testing of technical devices are operations that have to be  scrutinized by everyone in the exhibition location. Although the design process moved online smoothly, the opportunity to meet in person accelerated the finalization of the project.
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 The idea of a timespan- and structure-based data visualization representing EPFL evolution inspired the general concept of the digital installation. As a result, the Super-Vision project was created as a compound of two distinct but complementary visualizations representing time and space respectively. As visible in the figure below, the screenshot shows how the centre of this compound visualization hosts a network visualization arranging doctoral theses according to their lexical similarity: the more two of theses are nearby in the Cartesian plane, the greater their similarity ((<cite data-cite="1465847/UXAJSQYI"></cite><cite data-cite="1465847/SCADPH2G"></cite><cite data-cite="1465847/EF2A2SQ3"></cite><cite data-cite="1465847/2IY3BJAW"></cite>)). The network visualization draws an image of 8,000 doctoral theses, which allows the viewer to observe a visual classification by faculty of the entire corpus of doctoral theses, enabling spatial exploration. Around this network, a line chart marks an outer circle that works as an enclosing frame, showing the increasing frequency of doctoral defences. The network visualization and the line chart offer two complementary perspectives of the same dataset, creating a novel compound that can be described as an intermediary object between a dashboard and a basic visualization. In the case to imitate the incomparable Charles Joseph Minard’s infographic presenting Napoleon’s defeat (<cite data-cite="1465847/CVFJ63WL"></cite>), Super-Vision’s visualization guides the viewer through historical data through a multidimensional instrument to look into the institutional dimensionality of doctoral advising.
+<!-- #endregion -->
 
-```python tags=["figure-design-*"]
+```python tags=["figure-design-*", "hermeneutics"]
 from IPython.display import Image
 metadata={
     "jdh": {
@@ -212,16 +230,20 @@ metadata={
 display(Image("media/design.png"), metadata=metadata)
 ```
 
+<!-- #region tags=["hermeneutics"] -->
 An additional level of information is given by interactivity, which allows users to explore the dataset in detail. The figure above shows how the compound visualization is characterized by cyan graphic elements indicating selections. One user can navigate through time on a laptop by scrolling the trackpad, which moves the selection bar.  In response to this input, some graphic elements start bumping to bring out from the intertwined tissue of the doctoral theses defended in the selected period. From this central space, the user is invited to select one bouncing dot to get further information: on click, the interactive interface will show the title, candidate, directors, and faculty of the selected doctoral thesis, accompanied by a background effect showing the relative faculty’s extension. Only at this point the user is offered to explore the neighbourhood by navigating transversally similar works. This combination shows us how information and interaction design are intimately connected by their shared goal of understanding data, as recently discussed by Manuel Lima in a recent interview (<cite data-cite="1465847/FLKAEEBR"></cite>).
 
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 In the timeline, the selection bar progressively diminishes its length when going forward. This solution was necessary because the corpus’ density would not otherwise enable neat navigation in the most recent years. Despite this visual limitation that prevents overwhelming information, the user can still perceive the deluge of doctoral theses by scrolling forward the time bar. When the timeline is scrolled quickly, the animation accumulates hundreds of bouncing dots from the scrolled period. Such a feeling of being overwhelmed is usually avoided in information design because it generates unreadable, chaotic visuals. However, the same experience of surprise (<cite data-cite="1465847/399NSLGL"></cite>) or sublime (<cite data-cite="1465847/CA3XKSB3"></cite>) can help the user to realize the vast number of elements in their wholeness, which are typically difficult to grasp.
+<!-- #endregion -->
 
-
+<!-- #region tags=["hermeneutics"] -->
 A copy of the interactive interface of Super-Vision can be used on the Visionscarto website at https://visionscarto.net/maps/super-vision/, while the code is openly accessible on https://observablehq.com/@fil/epfl-super-vision.
+<!-- #endregion -->
 
-```python tags=["figure-observable-*"]
+```python tags=["figure-observable-*", "hermeneutics"]
 from IPython.display import IFrame
 IFrame('https://observablehq.com/embed/@fil/epfl-super-vision?cells=chart%2Ccss%2CshowWords%2Cstyle%2Cratio%2Cpolygon%2CyearShift%2ChtmlNode%2Cupdate_hover%2CN%2CmapSize%2Cx%2Cy%2CinitializeNodes%2Cbuffers%2Cstate%2C_worker%2CcreateWorkerFrom%2Cviewof+sensitivity%2CdefaultWheelDelta%2CdrawNodes%2Ccolors%2Cradius%2Cfont%2CH%2Cenclose%2CdrawUrquhart%2CdateReader%2CYEAR%2CbyYear%2Cres%2Chover%2CcircularTimeline%2CyearCount%2Cangle%2Cmodes%2CdrawModes%2Crawtheses%2Curl_umap_embedding%2Cumap_embed%2Calltheses%2Ctheses%2Cdata%2Cangle_a%2Cres_baked%2CapproximateCount%2CapproximateCountDerivative%2CintervalTheses%2Cd3%2Ctau%2CformatRow%2Cwidth%2Cheight%2Csin%2Ccos', width='100%', height='800')
 ```
