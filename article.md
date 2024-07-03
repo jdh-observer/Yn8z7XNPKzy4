@@ -23,13 +23,13 @@ University of Groningen
 <!-- #endregion -->
 
 <!-- #region tags=["contributor"] -->
-### Sarah Kenderdine [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-7190-9946)
-École polytechnique fédérale de Lausanne
+### Philippe Rivière
+Visionscarto
 <!-- #endregion -->
 
 <!-- #region tags=["contributor"] -->
-### Philippe Rivière
-Visionscarto
+### Sarah Kenderdine [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-7190-9946)
+École polytechnique fédérale de Lausanne
 <!-- #endregion -->
 
 <!-- #region tags=["copyright"] -->
